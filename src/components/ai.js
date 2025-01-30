@@ -7,7 +7,7 @@ const SYSTEM_PROMPT = `You are an assistant that receives a list of ingredients 
 export async function getRecipeFromMistral(ingredientsArr) {
     const ingredientsString = ingredientsArr.join(", ")
     try {
-        const response = await client.chatCompletion({
+        const response = await hf.chatCompletion({
             model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
             messages: [
                 { role: "system", content: SYSTEM_PROMPT },
